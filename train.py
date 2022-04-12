@@ -111,6 +111,8 @@ optimizer = AdamW(model.parameters(), lr = args.lr,  eps = 1e-8)
 
 #model.load_state_dict(torch.load(f'./save_models/batch_{args.batch_size}_lr_{args.lr}_epochs_{args.epochs}.pth'))
 
+stop_loss = np.inf
+count = 0
 for epoch_i in range(args.epochs):
 
     #train
